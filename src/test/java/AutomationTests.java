@@ -1,10 +1,6 @@
 import   com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -14,30 +10,31 @@ public class AutomationTests {
 
 
     @Test
-    public void checkLogo() {
+    public void checkLogo() throws InterruptedException {
 
         Configuration.browserSize = "1920x1080";
-
+        Thread.sleep(10000);
         open("https://www.ukrposhta.ua/ua");
         $(By.xpath("//*[@id='top-header']//img")).click();
         $(By.xpath("//*[@id='top-header']//img")).shouldBe(Condition.visible);
     }
 
     @Test
-    public void scrollToElement() {
+    public void scrollToElement() throws InterruptedException {
 
         Configuration.browserSize = "1920x1080";
-
+        Thread.
+                sleep(10000);
         open("https://www.ukrposhta.ua/ua");
         $(By.xpath("(//a[contains(text(),'ukrposhta@ukrposhta.ua')])[2]")).scrollIntoView(false);
         $(By.xpath("//*[@id='top-header']//img")).shouldBe(Condition.visible);
     }
 
     @Test
-    public void findTheIndex() {
+    public void findTheIndex() throws InterruptedException {
 
         Configuration.browserSize = "1920x1080";
-
+        Thread.sleep(10000);
         open("https://www.ukrposhta.ua/ua");
         $(By.xpath("//h2[contains(.,'Новини')]")).scrollIntoView(false);
         $(By.xpath("//button[@id='find_index2']")).click();
@@ -51,10 +48,10 @@ public class AutomationTests {
     }
 
     @Test
-    public void scrollToElement1() {
+    public void scrollToElement1() throws InterruptedException {
 
         Configuration.browserSize = "1920x1080";
-
+        Thread.sleep(10000);
         open("https://www.ukrposhta.ua/en");
         $(By.xpath("//input[@id='trackcode']")).setValue("1111111111");;
         $(By.xpath("//span[contains(.,'Track')]")).click();
@@ -62,12 +59,24 @@ public class AutomationTests {
     }
 
     @Test
-    public void checkCalculator() {
+    public void checkCalculator() throws InterruptedException {
 
         Configuration.browserSize = "1920x1080";
-
+        Thread.sleep(10000);
         open("https://www.ukrposhta.ua/ua");
         $(By.xpath("//a[@id='calculate_button']")).click();
         $(By.xpath("//h6[contains(.,'Зверніть, будь ласка, увагу!')]")).shouldBe(Condition.visible);
     }
+
+    @Test
+    public void chengeEN() throws InterruptedException {
+
+        Configuration.browserSize = "1920x1080";
+        Thread.sleep(10000);
+        open("https://www.ukrposhta.ua/ua");
+        $(By.xpath("//span[@id='language-menu-trigger-header']")).click();
+        $(By.xpath("//a[contains(text(),'EN')]")).click();
+        $(By.xpath("//h2[contains(.,'Postal services')]")).shouldBe(Condition.visible);
+    }
+
 }
