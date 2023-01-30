@@ -4,24 +4,17 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
+    //mavenLocal()
+    mavenCentral()
     maven {
         url = uri('https://repo.maven.apache.org/maven2/')
     }
 }
-dependencies {
-    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.8.0'
-    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest
-    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
-    // https://mvnrepository.com/artifact/junit/junit
-    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
-    testImplementation 'junit:junit:4.13.1'
-}
-group = 'org.example.volo'
+
+group = 'org.example'
 version = '1.0-SNAPSHOT'
-description = 'selenideprojectone'
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+description = 'seleniumfirstproject'
+java.sourceCompatibility = JavaVersion.VERSION_14
 
 publishing {
     publications {
@@ -38,3 +31,19 @@ tasks.withType(JavaCompile) {
 tasks.withType(Javadoc) {
     options.encoding = 'UTF-8'
 }
+
+dependencies {
+
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    testImplementation 'junit:junit:4.13.1'
+// https://mvnrepository.com/artifact/org.assertj/assertj-core
+    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.7.2'
+}
+
+test {
+    useTestNG()
+}
+targetCompatibility = JavaVersion.VERSION_14
