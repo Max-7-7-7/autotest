@@ -36,8 +36,6 @@ public class UiTests {
         loginPage = new LoginPage(driver);
         registrationPage = new RegistrationPage(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(IMPLICITLY_WAITER));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICITLY_WAITER));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(IMPLICITLY_WAITER));
         driver.manage().window().maximize();
 
         driver.get("https://www.ukrposhta.ua/ua");

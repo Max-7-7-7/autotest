@@ -17,7 +17,7 @@ public class LoginPage {
     @FindBy(xpath = username)
     private WebElement usernameField;
     /**
-     * Get 'Field to wright username'
+     * Get 'Field' to wright username
      */
     public WebElement getUsernameField(){
         return usernameField;
@@ -26,7 +26,7 @@ public class LoginPage {
     @FindBy(xpath = pasword)
     private WebElement paswordField;
     /**
-     * Get 'Field to wright password'
+     * Get 'Field' to wright password
      */
     public WebElement getpaswordField(){
         return paswordField;

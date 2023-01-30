@@ -6,11 +6,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
 
-    //public final static
-
-    /**
-     * find element
-     */
     public final static By logoButton = By.xpath("//img[@alt='site-logo']");
 
 
