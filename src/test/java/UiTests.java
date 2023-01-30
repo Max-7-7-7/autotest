@@ -54,7 +54,7 @@ public class UiTests {
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='site-logo']")));
         headerHelper.clickAndWaitJs(headerPage.getLogoMain(), "c");
-        assetrThat(driver.findElement(By.xpath("//h2[contains(.,'Поштові послуги')]")).isDisplayed());
+        assertTrue(driver.findElement(By.xpath("//h2[contains(.,'Поштові послуги')]")).isDisplayed());
 
     }
 

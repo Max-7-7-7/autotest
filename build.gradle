@@ -36,8 +36,8 @@ dependencies {
 
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
     testImplementation 'junit:junit:4.13.1'
-// https://mvnrepository.com/artifact/org.assertj/assertj-core
-    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.23.1'
 
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.7.2'
